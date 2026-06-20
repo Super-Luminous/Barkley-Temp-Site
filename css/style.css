@@ -1,0 +1,107 @@
+
+/* property: clamp(minimum, preferred, maximum); */
+*
+{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    transition-duration: 200ms;
+}
+
+/* Banner */
+.banner 
+{
+    display: flex;
+    flex-direction: column;
+    height: clamp(200px, 50vh, 600px);
+    background-color: darkgrey;
+    border: 1px solid black;
+}
+
+.banner h1
+{
+    border: 1px solid blue;
+
+    margin: auto;
+    margin-top: 10px;
+    
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.banner h2
+{
+    border: 1px solid red;
+
+    margin: auto;
+    font-size: calc(2.5rem + 1vw);
+    
+}
+
+
+/* Form */
+.contact-form
+{
+    border: 1px solid cyan;
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(200px, 70vw, 1000px);
+    margin: auto;
+    margin-top: 10px;
+}
+
+.contact-form h1
+{
+    border: 1px solid magenta;
+    margin: auto;
+    margin-top: 3vh;
+
+}
+
+.contact-form input
+{
+    width: clamp( 200px, 90%, 450px );
+    height: 40px;
+    font-size: 14pt;
+    outline: none;
+}
+
+.contact-form textarea
+{
+    width: clamp( 200px, 90%, 450px );
+    min-height: 200px;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    
+}
+
+.contact-form button
+{
+    padding: 14px 28px;
+}
+
+.contact-form input, textarea, button
+{
+    border-radius: 5px;
+    border: 1px solid skyblue;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus
+{
+    outline: none;
+    border-color: navy;
+}
+
+/* moblie */
+@media (max-width: 600px)
+{
+    .contact-form
+    {
+        width: 100%;    
+    }
+}
