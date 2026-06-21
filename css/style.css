@@ -19,19 +19,29 @@ body
 nav
 {
     display: flex;
+    flex-wrap: wrap; /* Forces items to next line when space runs out */
     background-color: #F4EFEA;
+}
+
+nav img 
+{
+    width: 35vw;
 }
 
 .nav-bar
 {
+    display: flex;
+    flex-wrap: wrap; /* Forces items to next line when space runs out */
+    border: 1px solid magenta;
     width: 100%;
 }
 
 .nav-bar ul
 {
+    border: 1px solid cyan;
     display: flex;         
     list-style-type: none;
-    width: 60vw; min-height: 80px;
+    width: 50vw; min-height: 80px;
     justify-content: space-evenly;
     margin-left: auto;
     font-size: 18pt;
@@ -205,9 +215,15 @@ footer p
         display: none;
     }
 
+    nav img
+    {
+        width: 66vw;
+        height: auto;
+    }
+
     main p
     {
-        font-size: 12pt;
+        font-size: 16pt;
         width: 90vw;
     }
 
