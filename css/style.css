@@ -3,7 +3,7 @@
 *
 {
     padding: 0px;
-    margin: 0;
+    margin: 0px;
     box-sizing: border-box;
     transition-duration: 200ms;
 }
@@ -13,27 +13,63 @@ body
     background-color: #F4EFEA;
 }
 
+
+/* Nav Bar*/
+nav
+{
+    display: flex;
+    background-color: #F4EFEA;
+}
+
+.nav-bar
+{
+    width: 100%;
+}
+
+.nav-bar ul
+{
+    display: flex;         
+    list-style-type: none;
+    width: 60vw; min-height: 80px;
+    justify-content: space-evenly;
+    margin-left: auto;
+    font-family: sans-serif;
+    font-size: 18pt;
+    align-items: center;
+}
+
+.nav-bar li
+{
+    cursor: pointer;
+}
+
+.nav-bar a
+{
+    text-decoration: none;
+    color: #3B2F2A;   
+}
+
+
+
 /* Banner */
 .banner 
 {
     display: flex;
     flex-direction: column;
-    height: clamp(400px, 60vh, 800px);
+    height: clamp(300px, 50vh, 600px);
     background-color: darkgrey;
     background-image: url(https://images.unsplash.com/photo-1619979842913-08603df442de?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;      /* Scales image to cover the entire space */
-    background-repeat: no-repeat; /* Prevents the image from tiling */
-    background-position: center;  /* Centers the image within the element */
+    background-size: cover;         /* Scales image to cover the entire space */
+    background-repeat: no-repeat;   /* Prevents the image from tiling */
+    background-position:top;        /* Centers the image within the element */
+    min-height: calc(100vw / 3);
+    border-top: 4px solid #3B2F2A;
+    border-bottom: 4px solid #3B2F2A;
 }
-
 
 .banner h1
 {
-    border: 1px solid blue;
-
     margin: auto;
-    margin-top: 10px;
-    
     text-align: center;
     font-family: sans-serif;
     color: white;
@@ -41,33 +77,66 @@ body
 
 .banner h2
 {
-    border: 1px solid red;
     align-self: center;
     font-size: calc(2.5rem + 1vw);
     margin-bottom: auto;
     color: white;
 }
 
+/* Main */
+main h1
+{
+    text-align: center;
+    font-size: calc(2rem + 1vw);
+    color: #4F6F64;
+    margin: 24px auto 12px;
+}
+
+.line
+{
+    display: block;
+    border: 2px solid #3B2F2A;
+    border-radius: 2px;
+    margin: auto;
+    width: 80%;
+}
+
+main p 
+{
+    width: clamp(200px, 70vw, 1200px);
+    margin: 24px auto 48px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 16pt;
+}
+
+
 
 /* Form */
 .contact-form
 {
-    border: 1px solid cyan;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 14px;
     width: clamp(200px, 70vw, 1200px);
-    margin: auto;
-    margin-top: 10px;
-
+    margin: 10px auto 40px;
     color:  #4F6F64;
+}
+
+.contact-form div
+{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: clamp( 200px, 90%, 800px );    
+    font-size: 14pt;
+    margin: auto;
 }
 
 .contact-form h1
 {
-    border: 1px solid magenta;
     margin: auto;
     margin-top: 3vh;
     font-size: calc(2rem + 1vw);
@@ -76,12 +145,11 @@ body
 .contact-form textarea,
 .contact-form input
 {
-    width: clamp( 200px, 90%, 650px );
     height: 40px;
     background: transparent;
     padding: 8px;
     outline: none;
-    
+    resize: none;      /* Disables the drag-to-resize handle entirely */
 }
 
 .contact-form textarea
@@ -92,12 +160,20 @@ body
 .contact-form button
 {
     padding: 14px 28px;
+    min-width: 120px;
 }
 
 .contact-form input, textarea, button
 {
-    border-radius: 5px;
-    border: 1px solid skyblue;
+    
+    border-radius: 6px;
+    border: 2px solid  #3B2F2A
+}
+
+.contact-form label
+{
+    margin-right: auto;
+    font-family: sans-serif;
 }
 
 .contact-form input:focus,
@@ -107,11 +183,35 @@ body
     border-color: navy;
 }
 
+footer p
+{   
+    width: 90vw;
+    margin: auto;
+    margin-top: 24px;
+}
+
+
 /* moblie */
 @media (max-width: 600px)
 {
     .contact-form
     {
         width: 100%;    
+    }
+
+    .nav-bar
+    {
+        display: none;
+    }
+
+    main p
+    {
+        font-size: 12pt;
+        width: 90vw;
+    }
+
+    .contact-form button
+    {
+        width: clamp( 200px, 90%, 800px ); 
     }
 }
